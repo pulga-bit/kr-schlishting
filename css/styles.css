@@ -6,16 +6,6 @@
   font-weight: normal;
   font-style: normal; }
 
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-      font-family: 'fontello';
-      src: url('../font/fontello.svg?8775128#fontello') format('svg');
-    }
-  }
-  */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -26,39 +16,26 @@
   width: 1em;
   margin-right: .2em;
   text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
   margin-left: .2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+}
 
 .icon-menu:before {
   content: '\e800'; }
 
-/* '' */
 .icon-twitter:before {
   content: '\e801'; }
 
-/* '' */
 .icon-facebook:before {
   content: '\e802'; }
 
-/* '' */
 .icon-instagram:before {
   content: '\f31e'; }
 
-/* '' */
 /*VARIABLES*/
 /*MIXING*/
 * {
@@ -185,6 +162,7 @@ header label {
   background: #333;
   transition: all 0.5s;
   transform: translatex(-100%); }
+
   .menu a {
     display: block;
     color: #F9F9F9;
@@ -192,34 +170,87 @@ header label {
     text-decoration: none;
     padding: 15px;
     border-bottom: 1px solid rgba 255, 255, 255, 0.3; }
+    
   .menu a:hover {
     background: #d10e1b; }
 
 /* CONTACTO */
 .contenedorContacto {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  font-family: "Hind", sans-serif; }
 
-th {
-  font-size: 35px;
-  color: black; }
-
-td {
-  font-size: 16px; }
-
-li {
+.contenedorContacto h3 {
+  padding: 5px;
+  font-family: "Hind", sans-serif;
+  font-size: 28px;
   color: #F9F9F9;
-  list-style: square;
-  list-style-position: inside; }
+  }  
+
+  .contenedorContacto h4 {
+    padding: 5px;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    color: #F9F9F9;
+    }  
+   
+
+/************************** FIELDSET // CONTACTO **************************/
 
 fieldset {
   color: #F9F9F9;
-  background-color: rgba(51, 51, 51, 0.9);
+  background-color: rgba(166, 166, 166, 0.9);
   padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  font-size: 28px; }
+  font-family: "Hind", sans-serif;
+  font-size: 28px;
+  min-width: 100%;
+  width: 100%; }
+
+  fieldset button {
+  padding: 4px; 
+    background: #d10e1b;
+    color: #ffffff;
+    font-family: "Hind", sans-serif; 
+    border-radius: 4px;
+  }
+
+  fieldset button:hover {
+    background-color: #d10e1b;
+  }
+
+  #contact {
+    background: #333;
+    padding: 3px;
+    margin: 3px 0;
+    box-shadow: 10 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.5s ease-in-out;
+  -moz-transition: border-color 0.5s ease-in-out;
+  transition: border-color 0.5s ease-in-out;
+  border: 3px solid #d10e1b;
+}
+
+/************************** FIN FIELDSET // CONTACTO **************************/
+
 
 /* adaptacion */
 @media (min-width: 1024px) {
@@ -302,12 +333,13 @@ fieldset {
   #informacion .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content:space-around; }
   #informacion article {
     margin: 15px; }
   #informacion img {
     width: 100%;
-    max-width: 280px; }
+    max-width: 280px; 
+    object-fit: cover;}
 
 /*--------------------------------------------- FIN INFORMACION */
 /*---------------------------------------------  INFORMACION 2   ------------------------------*/
@@ -344,17 +376,30 @@ fieldset {
 .row {
   margin-top: 0.5rem;
   display: flex;
+  padding-left: 2%;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0.1); }
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: "Hind", sans-serif;
+ }
 
 .col {
   flex: 1 1 8%;
   margin: 0 0 0.5rem 0;
   padding: 0.5em 10px;
   box-sizing: border-box;
-  background-color: #999999;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
+  background-color:rgba(166, 166, 166, 0.1);
+  border: 1px solid #d10e1b;
+  font-family: "Hind", sans-serif;}
+  
+  .col h3 {
+    font-family: "roboto", sans-serif;
+  }
+
+  .col h4 {
+    border: 1px solid #d10e1b;
+    font-family: "roboto", sans-serif;
+  }
 
 /* columns widths */
 .col-span-2 {
@@ -375,20 +420,21 @@ fieldset {
 .fixed-width {
   flex: 0 0 500px; }
 
-@media all and (max-width: 568px) {
-  .col-span-2,
-  .col-span-3,
-  .col-span-4,
-  .col-span-5 {
-    flex-basis: 50%; }
-  .col-span-7 {
-    flex-basis: 100%; } }
+  @media all and (max-width: 568px) {
+    .col-span-2,
+    .col-span-3,
+    .col-span-4,
+    .col-span-5 {
+      flex-basis: 50%; }
+    .col-span-7 {
+      flex-basis: 100%; } }
+  
 
 /*--------------------------------------------- GRIDS --------------------------------------------*/
 /*------------------- ALGUNOS BEM --------------*/
 #evento {
   background-color: #cccccc;
-  background: #333;
+  background: rgb(166, 166, 166);
   color: #F9F9F9;
   text-align: center;
   border-radius: 15px;
@@ -418,24 +464,3 @@ fieldset {
   font-size: 16px;
   padding: 1%; }
 
-
-  /*
-  #informacion2 {
-  background: #333;
-  color: #F9F9F9;
-  text-align: center;
-  padding: 20px; }
-  #informacion2 .contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
-
-.info2 {
-  margin: 20px; }
-  .info2 img {
-    width: 180px;
-    height: 180px;
-    border-radius: 10%;
-    border: 2px solid #d10e1b;
-    object-fit: cover; }
-    */
